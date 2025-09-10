@@ -64,14 +64,5 @@ Abra o arquivo index.html diretamente no navegador.
 
 (Opcional) Para rodar via servidor local, use a extensão Live Server no VS Code.
 
-⚠️ Observações
-
-O arquivo default.svg não existe.
-
-Para ícones de erro está sendo usado no-result.svg.
-
-Para o clima padrão inicial está sendo usado clouds.svg.
-
-Se preferir, você pode criar um default.svg e adicioná-lo à pasta imagem/icons/.
 
 
