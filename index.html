@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Weather App</title>
+
+  <!-- Google Fonts Icons -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    
+    <!-- 🔍 Seção de busca -->
+    <div class="search-section">
+      <div class="input-wrapper">
+        <span class="material-symbols-rounded">search</span>
+        <input type="search" placeholder="Digite o nome da cidade" class="search-input" />
+      </div>
+      <button class="location-button">
+        <span class="material-symbols-rounded">my_location</span>
+      </button>
+    </div>
+
+    <!-- 🚫 Mensagem de erro -->
+    <div class="no-results hidden">
+      <img src="imagem/icons/no-result.svg" alt="Erro" class="icon" />
+      <h3 class="title">Algo deu errado!</h3>
+      <p class="message">Não conseguimos buscar os detalhes do clima. Verifique a cidade ou tente novamente.</p>
+    </div>
+
+    <!-- ☀️ Clima atual -->
+    <div class="weather-section">
+      <div class="current-weather">
+        <img src="imagem/icons/clouds.svg" alt="Ícone do clima" class="weather-icon" />
+        <h2 class="temperature">--<span>°C</span></h2>
+        <h5 class="description">Descrição do clima</h5>
+      </div>
+    </div>
+
+    <!-- ⏰ Previsão por hora -->
+    <div class="hourly-weather">
+      <ul class="weather-list"></ul>
+    </div>
+
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

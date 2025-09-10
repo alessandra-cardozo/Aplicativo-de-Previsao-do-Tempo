@@ -1,0 +1,235 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100..900&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Montserrat", sans-serif;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #6a5acd, #483d8b);
+  color: #333;
+  overflow-x: hidden;
+}
+
+.container {
+  flex-grow: 1;
+  max-width: 425px;
+  border-radius: 16px;
+  background: #ffffff;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.container:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
+}
+
+/* 🔍 Seção de busca */
+.search-section {
+  display: flex;
+  gap: 12px;
+  padding: 25px;
+  align-items: center;
+  background: linear-gradient(135deg, #6a5acd, #836fff);
+  color: #fff;
+  border-bottom: 1px solid #dcdcdc;
+}
+
+.search-section .input-wrapper {
+  height: 54px;
+  width: 100%;
+  position: relative;
+}
+
+.search-section .input-wrapper span {
+  position: absolute;
+  top: 50%;
+  left: 17px;
+  pointer-events: none;
+  transform: translateY(-50%);
+  color: #fff;
+}
+
+.search-section .search-input {
+  height: 100%;
+  width: 100%;
+  outline: none;
+  font-size: 1rem;
+  font-weight: 500;
+  border-radius: 8px;
+  padding: 0 20px 0 50px;
+  border: 1px solid #dcdcdc;
+  background: #f9f9f9;
+  color: #333;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.search-section .search-input:focus {
+  border-color: #6a5acd;
+  box-shadow: 0 0 8px rgba(106, 90, 205, 0.3);
+}
+
+.search-section .location-button {
+  height: 54px;
+  width: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  background: #6a5acd;
+  color: #fff;
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.search-section .location-button:hover {
+  background: #483d8b;
+  border-color: #6a5acd;
+}
+
+/* 🚫 Mensagem de erro */
+.no-results {
+  display: none;
+  text-align: center;
+  padding: 40px;
+  color: #666;
+}
+
+.no-results .title {
+  font-size: 1.25rem;
+  font-weight: bold;
+  margin: 20px 0 10px;
+}
+
+.no-results .message {
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #555;
+}
+
+/* Visibilidade controlada pelo JS */
+.no-results.hidden {
+  display: none !important;
+}
+
+.no-results:not(.hidden) {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* ☀️ Clima atual */
+.weather-section {
+  padding: 20px;
+  border-bottom: 1px solid #f0f0f0;
+  text-align: center;
+}
+
+.weather-section:last-child {
+  border-bottom: none;
+}
+
+.weather-section .current-weather {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.current-weather .weather-icon {
+  width: 100px;
+  height: 100px;
+  filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.1));
+}
+
+.current-weather .temperature {
+  font-size: 3rem;
+  color: #333;
+  display: flex;
+  align-items: baseline;
+}
+
+.current-weather .temperature span {
+  font-size: 1.5rem;
+  margin-left: 5px;
+}
+
+.current-weather .description {
+  font-size: 1rem;
+  font-weight: 500;
+  color: #666;
+}
+
+/* ⏰ Previsão horária */
+.hourly-weather {
+  padding: 20px;
+  background: #f9f9f9;
+  border-top: 1px solid #dcdcdc;
+}
+
+.hourly-weather .weather-list {
+  display: flex;
+  gap: 15px;
+  overflow-x: auto;
+  scrollbar-width: thin;
+  scrollbar-color: #dcdcdc transparent;
+}
+
+.hourly-weather .weather-list::-webkit-scrollbar {
+  height: 8px;
+}
+
+.hourly-weather .weather-list::-webkit-scrollbar-thumb {
+  background: #dcdcdc;
+  border-radius: 4px;
+}
+
+.hourly-weather .weather-item {
+  text-align: center;
+  flex: 0 0 auto;
+  min-width: 70px;
+}
+
+.hourly-weather .time {
+  font-size: 0.9rem;
+  margin-bottom: 5px;
+  color: #444;
+}
+
+.hourly-weather .temperature {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-top: 5px;
+  color: #333;
+}
+
+/* 📱 Responsividade */
+@media (min-width: 600px) {
+  .container {
+    max-width: 600px;
+  }
+  .current-weather .temperature {
+    font-size: 3.5rem;
+  }
+}
+
+@media (min-width: 900px) {
+  .container {
+    max-width: 800px;
+  }
+  .search-section {
+    padding: 30px;
+  }
+  .current-weather .temperature {
+    font-size: 4rem;
+  }
+}
